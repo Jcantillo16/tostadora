@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <link rel="shortcut icon" type="image/png" href="assets/img/cafe.png"/>
+
+    <title>Inicio De Sesion</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="assets/assets_register/css/nunito-font.css"/>
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="assets/assets_register/css/style.css"/>
+
+</h:head>
+<h:body>
+    <div class="form-v6">
+        <div class="page-content">
+            <div class="form-v6-content">
+                <div class="form-left">
+                    <img src="assets/assets_register/images/cf0f54eff9544a3fea19d237f34e2963.gif" alt="form"/>
+                </div>
+                <h:form class="form-detail" h5:action="#" h5:method="post">
+                    <h2>Inicio De Sesion</h2>
+                    <div class="form-row">
+                        <h:inputText
+                                h5:type="email"
+                                value="#{inicioSesion.correo}"
+                                required="true"
+                                requiredMessage="Correo Electronico obligatorio"
+                                class="form-control"
+                                h5:placeholder="Email"
+                                id="id_email">
+                        </h:inputText>
+                        <h:message for="id_email" style="color: red"></h:message>
+                    </div>
+                    <br/>
+                    <div class="form-row">
+                        <h:inputText
+                                h5:type="password"
+                                value="#{inicioSesion.clave}"
+                                class="form-control"
+                                required="true"
+                                requiredMessage="Contraseña Obligatoria"
+                                h5:placeholder="Password"
+                                id="id_password">
+                        </h:inputText>
+                        <h:message for="id_password" style="color: red"></h:message>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <div class="form-row-last">
+                        <h:commandButton value="Ingresar" action="#{inicioSesion.validarUsuario()}"
+                                         h5:styleClass="register"/>
+                    </div>
+                    <br/>
+                    <br/>
+                    <center>  <div>
+                       
+                        <a href="register.xhtml" style="text-decoration: none; color:#000 ">Registrate</a>
+                         <br/>
+                         <br/>
+                        <a href="recovery.xhtml" style="text-decoration: none; color:#000 " class="text-primary">¿Olvido su contraseña?</a>
+                        </div> </center>
+                    <br/>
+                   
+                </h:form>
+            </div>
+        </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="assets/assets_index/plugins/common/common.min.js"></script>
+        <script src="assets/assets_index/js/custom.min.js" ></script>
+        <script src="assets/assets_index/js/settings.js"></script>
+        <script src="assets/assets_index/js/gleek.js"></script>
+        <script src="assets/assets_index/js/styleSwitcher.js"></script>
+</h:body>
+</html>
+
+
+

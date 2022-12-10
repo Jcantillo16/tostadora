@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h5="http://xmlns.jcp.org/jsf/passthrough">
+
+
+<ui:composition>
+
+
+    <br></br>
+    <div class="col">
+        <div class="login-form-bg h-100">
+            <div class="container h-100">
+                <div class="row justify-content-center h-100">
+                    <div class="col-xl-6">
+                        <div class="form-input-content">
+                            <div class="card login-form mb-0">
+                                <div class="card-body pt-5">
+                                    <a class="text-center" href="index.html"><h4>Agregar producto</h4></a>
+
+
+                                    <h:form class="mt-5 mb-5 login-input">
+
+                                        <div class="form-group">
+                                            <h:inputText
+                                                    h5:placeholder="Nombre"
+                                                    required="true"
+                                                    requiredMessage="este campo es obligatorio"
+                                                    id="lg-nom"
+                                                    class="form-control"
+                                                    value="#{productos.producto.nameProduct}"
+                                            />
+                                            <h:message for="lg-nom" style="color: red"></h:message>
+
+                                        </div>
+                                        <div class="form-group">
+
+                                            <h:inputText
+                                                    h5:placeholder="Descripcion"
+                                                    required="true"
+                                                    requiredMessage="este campo es obligatorio"
+                                                    id="lg-des"
+                                                    class="form-control"
+                                                    value="#{productos.producto.description}"
+                                            />
+                                            <h:message for="lg-ape" style="color: red"></h:message>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <h:inputText h5:type="Precio"
+                                                         value="#{productos.producto.price}"
+                                                         required="true"
+                                                         requiredMessage="este campo es obligatorio"
+                                                         class="form-control"
+                                                         h5:placeholder="price"
+                                                         id="id_price">
+                                            </h:inputText>
+                                            <h:message for="id_price" style="color: red"></h:message>
+
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <h:inputText h5:type="imagen"
+                                                         value="#{productos.producto.image}"
+                                                         required="true"
+                                                         requiredMessage="este campo es obligatorio"
+                                                         class="form-control"
+                                                         h5:placeholder="imagen"
+                                                         id="id_img">
+                                            </h:inputText>
+                                            <h:message for="id_img" style="color: red"></h:message>
+
+                                        </div>
+
+
+                                        <h:commandButton action="#{productos.crearProducto()}" value="Register"
+                                                         class="btn login-form bg-c-green __btn w-100"></h:commandButton>
+
+                                    </h:form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</ui:composition>
+
+</html>
