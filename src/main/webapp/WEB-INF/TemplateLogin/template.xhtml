@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>usuario</title>
+    
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="Phoenixcoded"/>
+    <link rel="icon" href="../assets/images/cafe.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="../assets/assetsAdmin/css/style.css"/>
+</h:head>
+<h:body>
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <ui:insert name="area busqueda">
+        <ui:include src="area_busqueda.xhtml"></ui:include>
+    </ui:insert>
+    <ui:insert name="area perfil">
+        <ui:include src="area_perfil.xhtml"></ui:include>
+    </ui:insert>
+<!--    <ui:insert name="area busqueda">-->
+<!--        <ui:include src="area_busqueda.xhtml"></ui:include>-->
+<!--    </ui:insert>-->
+    <ui:insert name="area trabajo">
+        <ui:include src="area_trabajo.xhtml"></ui:include>
+    </ui:insert>
+
+
+<script src="../assets/assetsAdmin/js/vendor-all.min.js"></script>
+
+    <script src="../assets/assetsAdmin/js/plugins/bootstrap.min.js"></script>
+
+   
+
+
+    <script src="../assets/assetsAdmin/js/pages/dashboard-main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</h:body>
+</html>

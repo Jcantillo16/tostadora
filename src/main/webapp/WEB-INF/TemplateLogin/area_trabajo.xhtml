@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<ui:composition>
+
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <div class="page-body">
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6">
+                                        <div class="card bg-c-blue order-card">
+                                            <div class="card-block">
+                                                <h6 class="m-b-20">Total de Clientes</h6>
+                                                <h2 class="text-right"><i class="ti-user f-left"></i>
+                                                    <h:outputText value="#{inicioSesion.cantidadUsuarios()}"/>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-6">
+                                        <div class="card bg-c-green order-card">
+                                            <div class="card-block">
+                                                <h6 class="m-b-20">Total de Productos</h6>
+                                                <h2 class="text-right"><i class="ti-tag f-left"></i>
+                                                    <h:outputText value="#{productos.cantidadProductos()}"/>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-6">
+                                        <div class="card bg-c-yellow order-card">
+                                            <div class="card-block">
+                                                <h6 class="m-b-20">Total de Ventas</h6>
+                                                <h2 class="text-right"><i class="ti-wallet f-left"></i><span>486</span>
+                                                </h2>
+                                                <p class="m-b-0">Ventas realizadas<span class="f-right">48%</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-6">
+                                        <div class="card bg-c-pink order-card">
+                                            <div class="card-block">
+                                                <h6 class="m-b-20">Total de Compras</h6>
+                                                <h2 class="text-right"><i
+                                                        class="ti-shopping-cart f-left"></i><span>486</span></h2>
+                                                <p class="m-b-0">Compras realizadas<span class="f-right">48%</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--                                    graficos de ventas y compra-->
+                                    <!--                                    imagenes de graficos-->
+                                    <div class="col-xl-6 col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5>Gráfico de Ventas</h5>
+                                                <span>Gráfico de ventas por mes</span>
+                                            </div>
+                                            <div class="card-block">
+                                                <div id="chart-container">
+                                                    <canvas id="myChart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5>Gráfico de Compras</h5>
+                                                <span>Gráfico de compras por mes</span>
+                                            </div>
+                                            <div class="card-block">
+                                                <div id="chart-container">
+                                                    <canvas id="myChart2"></canvas>
+                                                    <h:form>
+                                                        <h:commandButton value="Envio De Promociones"
+                                                                         action="#{emailMasive.enviarCorreo()}"
+                                                                         style="margin-top: 10px;"
+                                                                         styleClass="btn btn-primary btn-sm btn-round has-ripple"
+                                                        />
+                                                    </h:form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5>Últimas Ventas</h5>
+                                                <span>Últimas ventas realizadas</span>
+                                            </div>
+                                            <div class="card-block">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>Fecha</th>
+                                                            <th>Cliente</th>
+                                                            <th>Producto</th>
+                                                            <th>Cantidad</th>
+                                                            <th>Precio</th>
+                                                            <th>Total</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>2018-01-01</td>
+                                                            <td>Cliente 1</td>
+                                                            <td>Producto 1</td>
+                                                            <td>1</td>
+                                                            <td>100</td>
+                                                            <td>100</td>
+                                                        </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--                                    fin de tabla de ventas-->
+
+                                    <!--                                    tabla de compras-->
+                                    <div class="col-xl-12 col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5>Últimas Compras</h5>
+                                                <span>Últimas compras realizadas</span>
+                                            </div>
+                                            <div class="card-block">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>Fecha</th>
+                                                            <th>Proveedor</th>
+                                                            <th>Producto</th>
+                                                            <th>Cantidad</th>
+                                                            <th>Precio</th>
+                                                            <th>Total</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>2018-01-01</td>
+                                                            <td>Proveedor 1</td>
+                                                            <td>Producto 1</td>
+                                                            <td>1</td>
+                                                            <td>100</td>
+                                                            <td>100</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2018-01-01</td>
+                                                            <td>Proveedor 1</td>
+                                                            <td>Producto 1</td>
+                                                            <td>1</td>
+                                                            <td>100</td>
+                                                            <td>100</td>
+                                                        </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ui:composition>
+</html>
+
