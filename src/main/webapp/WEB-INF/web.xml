@@ -40,13 +40,13 @@
     </mime-mapping>
     
     <data-source>
-        <name>java:app/JNDI_tostadora</name>
-        <class-name>com.mysql.cj.jdbc.MysqlDataSource</class-name>
-        <server-name>localhost</server-name>
+        <name>java:app/JNDI_toast</name>
+        <class-name>com.mysql.cj.jdbc.Driver</class-name>
+        <server-name>node112889-tostadora.fr-1.paas.massivegrid.net</server-name>
         <port-number>3306</port-number>
         <database-name>tostadora</database-name>
         <user>root</user>
-        <password>Digital1317</password>
+        <password>CIAank30167</password>
         <property>
             <name>useSSL</name>
             <value>false</value>
@@ -59,7 +59,6 @@
         <max-pool-size>32</max-pool-size>
         <min-pool-size>8</min-pool-size>    
     </data-source>
-    
     
 </web-app>
 
